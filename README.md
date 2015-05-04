@@ -1,16 +1,24 @@
-#Cagliari Open Data SDK for node.js
+Cagliari Open Data SDK for node.js
+==================================
+
 Basic node.js libraries to use Cagliari Open Data API endpoints.
 
 
-##Supported Datasets and Endpoints
+Supported Datasets and Endpoints
+--------------------------------
 
 - Traffic
 
-##Installation
+Installation
+------------
 
 `npm install cagliari-opendata`
 
-##Basic Example
+Basic Example
+-------------
+
+Getting all installed traffic monitoring stations:
+
 ```js
 var opendata = require('cagliari-opendata');
 var traffic = opendata.traffic;
@@ -24,7 +32,8 @@ traffic.getStations(function(err, stations){
 });
 ```
 
-#API
+API
+---
 
 All functions are asynchronous, thus a `callback(err, data)` is *mandatory* as the last parameter in a call.
 
@@ -74,11 +83,13 @@ A JSON is returned.
 - `endDate` a Date representing the end date/time for required measurements (optional)
 
 
-##Links
+Links
+-----
 
-- [Cagliari Open Data Portal](http://www.comune.cagliari.it/portale/it/api_rest.page)
+- [Cagliari Open Data Hub](http://www.comune.cagliari.it/portale/it/api_rest.page)
 
-##Contributors
+Contributors
+------------
 
 <table><tbody>
 <tr><th align="left">Antonio Pintus</th><td><a href="https://github.com/pintux">GitHub/pintux</a></td><td><a href="https://twitter.com/apintux">Twitter/@apintux</a></td></tr>
@@ -86,7 +97,8 @@ A JSON is returned.
 </tbody></table>
 
 
-##License - "MIT License"
+License - "MIT License"
+-----------------------
 Copyright (c) 2015 Paraimpu srl, https://www.paraimpu.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
