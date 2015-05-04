@@ -1,6 +1,6 @@
 {
   "name": "cagliari-opendata",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Cagliari Open Data SDK",
   "homepage":"https://github.com/paraimpu/cagliari-opendata",
   "main": "index.js",
@@ -20,5 +20,17 @@
   "devDependencies": {
     "mocha": "^2.2.1",
     "unit.js": "^1.1.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paraimpu/cagliari-opendata.git"
+  },
+  "keywords": [
+    "cagliari",
+    "opendata",
+    "smartcity",
+    "API",
+    "traffic"
+  ]
+
 }
