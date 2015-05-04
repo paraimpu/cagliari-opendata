@@ -8,7 +8,6 @@ Basic node.js libraries to use Cagliari Open Data API endpoints.
 
 ##Installation
 
-#TBD
 `npm install cagliari-opendata`
 
 ##Basic Example
