@@ -46,7 +46,8 @@ A JSON is returned.
 -----------------------------------------------------------
 <a name="getStation"></a>
 ### getStation(id, cb)
-Gets info about a particular station given its `id`
+Gets info about a particular station given its `id`.
+
 A JSON is returned.
 
 - `id` is the numeric or String id of the station
@@ -54,7 +55,9 @@ A JSON is returned.
 -----------------------------------------------------------
 <a name="getStationData"></a>
 ### getStationData(id, startDate, endDate, cb)
-Gets measurement data from all the sensors in a station, given its id
+Gets measurement data from all the sensors in a station, given its `id`.
+
+A JSON is returned.
 
 - `id` is the numeric or string id of the station
 - `startDate` a Date representing the start date/time for required measurements (mandatory)
@@ -63,7 +66,9 @@ Gets measurement data from all the sensors in a station, given its id
 ------------------------------------------------------------
 <a name="getSensorData"></a>
 ### getSensorData(id, startDate, endDate, cb)
-Gets measurement data from for a specific sensor, given its id
+Gets measurement data from for a specific sensor, given its `id`.
+
+A JSON is returned.
 
 - `id` is the numeric or string id of the sensor
 - `startDate` a Date representing the start date/time for required measurements (mandatory)
