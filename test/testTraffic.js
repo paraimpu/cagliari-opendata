@@ -45,7 +45,7 @@ describe('Traffic Client', function(){
             traffic.getStationData(1, start, end, function(err, data){
                 data.should.be.ok;
                 data.should.have.property('misurazioni');
-                if(data.misurazioni.misurazione.length) {
+                if(data.misurazioni.numeroMisurazioni > 0 && data.misurazioni.misurazione.length) {
                     data.misurazioni.misurazione[0].should.have.property('flusso');
                     data.misurazioni.misurazione[0].should.have.property('velocita');
                 }
@@ -145,7 +145,7 @@ describe('Traffic Client', function(){
                 data.should.have.property('misurazioni');
                 data.should.have.property('postazione');
                 data.should.have.property('sensore');
-                if(data.misurazioni.misurazione.length) {
+                if(data.misurazioni.numeroMisurazioni > 0 && data.misurazioni.misurazione.length) {
                     data.misurazioni.misurazione[0].should.have.property('flusso');
                     data.misurazioni.misurazione[0].should.have.property('velocita');
                 }
@@ -167,7 +167,7 @@ describe('Traffic Client', function(){
                 data.should.have.property('misurazioni');
                 data.should.have.property('postazione');
                 data.should.have.property('sensore');
-                if(data.misurazioni.misurazione.length) {
+                if(data.misurazioni.numeroMisurazioni > 0 && data.misurazioni.misurazione.length) {
                     data.misurazioni.misurazione[0].should.have.property('flusso');
                     data.misurazioni.misurazione[0].should.have.property('velocita');
                 }
@@ -196,7 +196,85 @@ describe('Traffic Client', function(){
         })
     });
 
+    describe('getSensorData with not valid date start date and no end date', function(){
+        it('data must be null and en Error must be raised', function(done){
+
+            var start = '2016-13-01';
+
+            traffic.getSensorData(2, start, function(err, data){
+                should(data).not.be.ok;
+                err.should.be.ok;
+                done();
+            });
+        })
+    });
+
+    describe('getSensorData with a valid date start date and no valid end date', function(){
+        it('data must be null and en Error must be raised', function(done){
+
+            var start = new Date();
+            var end = '2016-13-01';
+
+            traffic.getSensorData(2, start, end, function(err, data){
+                should(data).not.be.ok;
+                err.should.be.ok;
+                done();
+            });
+        })
+    });
+
+    describe('getSensorData  with an interval > 24h', function(){
+        it('data must be null and en Error must be raised', function(done){
+
+            var start = new Date('October 13, 2015 11:13:00');
+
+            traffic.getSensorData(2, start, function(err, data){
+                should(data).not.be.ok;
+                err.should.be.ok;
+                done();
+            });
+        })
+    });
 
 
+    describe('getStationData with not valid start date and no end date', function(){
+        it('data must be null and en Error must be raised', function(done){
+            var start = '2016-13-01';
+
+            traffic.getStationData(2, start, function(err, data){
+                should(data).not.be.ok;
+                err.should.be.ok;
+                done();
+
+            });
+
+        })
+    });
+
+    describe('getStationData with a valid date start date and no valid end date', function(){
+        it('data must be null and en Error must be raised', function(done){
+            var start = new Date();
+            var end = '2016-13-01';
+
+            traffic.getStationData(2, start, function(err, data){
+                should(data).not.be.ok;
+                err.should.be.ok;
+                done();
+            });
+
+        })
+    });
+
+    describe('getStationData with an interval > 24h', function(){
+        it('data must be null and en Error must be raised', function(done){
+            var start = new Date('October 13, 2015 11:13:00');
+            traffic.getStationData(2, start, function(err, data){
+                should(data).not.be.ok;
+                err.should.be.ok;
+                done();
+            });
+
+        })
+    });
 
 });
